@@ -1,74 +1,307 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poznaj facetów w Twojej okolicy 🏳️‍🌈</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fdf6f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .container {
-      text-align: center;
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 350px;
-    }
-    .headline {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      color: #333333;
-    }
-    .text {
-      font-size: 16px;
-      margin-bottom: 20px;
-      color: #555555;
-    }
-    .cta-button {
-      display: inline-block;
-      padding: 12px 20px;
-      font-size: 16px;
-      background-color: #ff4081;
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.2s;
-    }
-    .cta-button:hover {
-      background-color: #e73370;
-    }
-    .footer {
-      font-size: 12px;
-      color: #888888;
-      margin-top: 15px;
-    }
-    .image-container img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GayPolska.pl - Strona główna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+        
+        /* Header */
+        header {
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            color: #ffcc00;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+            flex-grow: 1;
+        }
+        
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .intro-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Buttons */
+        .buttons-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 60px;
+            width: 100%;
+        }
+        
+        .login-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 18px 40px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-width: 250px;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+        }
+        
+        .login-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .login-btn i {
+            font-size: 1.3rem;
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            opacity: 0.85;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .intro-text p {
+                font-size: 1.1rem;
+            }
+            
+            .login-btn {
+                min-width: 100%;
+                padding: 16px 30px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .main-content {
+                padding: 40px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="image-container">
-      <img src="gejki.png" alt="Poznaj facetów">
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-rainbow"></i>
+                GayPolska.pl
+            </div>
+            <p class="tagline">Bezpieczna społeczność LGBTQ+ w Polsce - łączymy, wspieramy, inspirujemy</p>
+        </header>
+        
+        <main class="main-content">
+            <div class="intro-text">
+                <h1>Dołącz do naszej społeczności</h1>
+                <p>GayPolska.pl to największa w Polsce platforma dla osób LGBTQ+, oferująca bezpieczną przestrzeń do nawiązywania kontaktów, dzielenia się doświadczeniami i otrzymywania wsparcia. Dołącz do nas już dziś!</p>
+            </div>
+            
+            <div class="buttons-section">
+                <a href="https://radarkobiet.pl/link/3019/19099102" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Zaloguj się
+                </a>
+                <a href="https://radarkobiet.pl/link/3019/19099102" class="login-btn">
+                    <i class="fas fa-user-plus"></i> Załóż konto
+                </a>
+                <a href="https://radarkobiet.pl/link/3019/19099102" class="login-btn">
+                    <i class="fas fa-mobile-alt"></i> Aplikacja mobilna
+                </a>
+                <a href="https://radarkobiet.pl/link/3019/19099102" class="login-btn">
+                    <i class="fas fa-question-circle"></i> Centrum pomocy
+                </a>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Duża społeczność</h3>
+                    <p>Dołącz do tysięcy użytkowników z całej Polski, którzy już korzystają z naszej platformy.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Bezpieczeństwo</h3>
+                    <p>Zapewniamy bezpieczną przestrzeń z moderowaną zawartością i ochroną danych.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Przyjazna atmosfera</h3>
+                    <p>Tworzymy środowisko wolne od dyskryminacji, pełne wzajemnego szacunku.</p>
+                </div>
+            </div>
+        </main>
     </div>
-    <div class="headline">Poznaj facetów w Twojej okolicy 🏳️‍🌈</div>
-    <div class="text">Portal społecznościowy dla mężczyzn 18+. Rozmowy, znajomości, randki. Dyskretnie i bez zobowiązań.</div>
-    <a class="cta-button" href="https://randkuj.xyz/link/3019/19099102" target="_blank">ZOBACZ PROFILE</a>
-    <div class="footer">18+ | Portal dla dorosłych mężczyzn</div>
-  </div>
+    
+    <footer>
+        <div class="container">
+            <p>GayPolska.pl &copy; 2023. Wszelkie prawa zastrzeżone.</p>
+            <p>Strona wykorzystuje pliki cookies. Kontakt: kontakt@gaypolska.pl</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dodanie animacji przycisków
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.login-btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Dodanie efektu kliknięcia
+                    e.target.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        e.target.style.transform = '';
+                    }, 200);
+                    
+                    // Przekierowanie już jest w href, więc nie potrzeba dodatkowego kodu
+                });
+            });
+            
+            // Dodanie prostego efektu pojawiania się elementów
+            const elements = document.querySelectorAll('.feature-card, .intro-text, .buttons-section');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100 + (index * 200));
+            });
+        });
+    </script>
 </body>
 </html>
